@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>De Banaansjamaan</title>
+  <link rel="stylesheet" href="w3.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <style>
+  body, html {
+    background-color: #834c87;
+    height: 100%;}
+  .bgimg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgimg {
+  background-image: url('');
+  min-height: 100%;
+/* telefoons, tablets etc. */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg {
+    background-attachment: scroll;
+    min-height: 400px;
+  }}
+  </style>
+</head>
+<body>
+	<div class="bgimg w3-display-container" id="home">
+	<div class="w3-display-middle">
+	<a href="mailto:post@banaansjamaan.nl?subject=Rooksignaal"><canvas id="canvas" width="500" height="500"></canvas></a>
+	</div>
+	</div>
+</body>
+<script>
+var gezicht = new Image();
+var donker = new Image();
+var baby = new Image();
+var bloem = new Image();
+var uil = new Image();
+var ei = new Image();
+var kat = new Image();
+var specht = new Image();
+var veer = new Image();
+var liefde = new Image();
+var sex = new Image();
+var liberty = new Image();
+var submission = new Image();
+var dominus = new Image();
+
+function init() {
+  gezicht.src = 'images/gezicht.png';
+  donker.src = 'images/donker.png';
+  baby.src = 'images/baby.png';
+  bloem.src = 'images/bloem.png';
+  uil.src = 'images/uil.png';
+  ei.src = 'images/ei.png';
+  kat.src = 'images/kat.png';
+  specht.src = 'images/specht.png';
+  veer.src = 'images/veer.png';
+  liefde.src = 'images/liefde.png';
+  sex.src = 'images/sex.png';
+  submission.src = 'images/submission.png';
+  liberty.src = 'images/liberty.png';
+  dominus.src = 'images/dominus.png';
+  window.requestAnimationFrame(draw);
+}
+
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+
+  ctx.globalCompositeOperation = 'destination-over';
+  ctx.clearRect(0, 0, 500, 500); // clear canvas
+  ctx.save();
+  ctx.translate(250, 250);
+  
+  var time = new Date();
+  ctx.rotate( ((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds() );
+  
+ // liefde
+  ctx.translate(170, 0);
+  ctx.drawImage(liefde, 0, 0);
+ 
+ // baby
+  ctx.translate(-70, 80);
+  ctx.drawImage(baby, 0, 0);
+  
+ // specht
+  ctx.translate(-85, 75);
+  ctx.drawImage(specht, 0, 0);
+  
+ // ei
+  ctx.translate(-90, 10);
+  ctx.drawImage(ei, 0, 0);
+  
+  // bloem
+  ctx.translate(-90, -50);
+  ctx.drawImage(bloem, 0, 0);
+  
+  // uil
+  ctx.translate(-50, -90);
+  ctx.drawImage(uil, 0, 0);
+  
+  // kat
+  ctx.translate(0, -120);
+  ctx.drawImage(kat, 0, 0);
+  
+  // veer
+  ctx.translate(60, -90);
+  ctx.drawImage(veer, 0, 0);
+  
+  // sex
+  ctx.translate(80, -40);
+  ctx.drawImage(sex, 0, 0);
+  
+  // liberty
+  ctx.translate(130, 10);
+  ctx.drawImage(liberty, 0, 0);
+  
+  // submission
+  ctx.translate(100, 100);
+  ctx.drawImage(submission, 0, 0);
+    
+  ctx.restore();
+  
+  ctx.drawImage(gezicht, 0, 0, 500, 500);
+ 
+  window.requestAnimationFrame(draw);
+}
+init();
+</script>
+</html>
